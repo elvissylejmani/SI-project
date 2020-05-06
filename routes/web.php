@@ -34,3 +34,9 @@ Route::get('/edit', function(){
     abort(403);
 
 })->middleware('auth');
+
+
+
+Route::get('/form', function(){
+        return view('form');
+})->middleware('auth');
