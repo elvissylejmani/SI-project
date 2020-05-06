@@ -26,3 +26,9 @@ Route::get('/about', function(){
 return view('about');
 
 })->middleware('auth');
+
+Route::get('/edit', function(){
+
+return view('edit');
+
+})->middleware('auth');
