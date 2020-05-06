@@ -28,7 +28,9 @@ return view('about');
 })->middleware('auth');
 
 Route::get('/edit', function(){
-
-return view('edit');
+    if (Gate::allows('edit-settings')) 
+            return view('edit');
+    else
+    abort(403);
 
 })->middleware('auth');
