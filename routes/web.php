@@ -43,10 +43,12 @@ Route::get('/form', function(){
 
 
 Route::post('/form',function (){
-    return request()->validate([
+    $data = request()->validate([
         'Fullname' => 'required|max:75|regex:/^[a-zA-Z]+$/u',
         'Age' => ['required', 'numeric']
     ]);
+
+    // Insert data after this
 
     return redirect('/home');
 });
