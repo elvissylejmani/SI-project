@@ -24,7 +24,7 @@
         <input type="text" value="{{ $data ?? ''}}" name="decrypt" class="form-control"
            id="exampleInputEmail1"  placeholder="Data to be encrypted">
     
-           <button type="submit" class="btn btn-primary mt-4">Encrypt</button>
+           <button type="submit" class="btn btn-primary mt-4">Decrypt</button>
         </div>
         </div>
         </form>
