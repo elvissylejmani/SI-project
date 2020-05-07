@@ -40,3 +40,13 @@ Route::get('/edit', function(){
 Route::get('/form', function(){
         return view('form');
 })->middleware('auth');
+
+
+Route::post('/form',function (){
+    return request()->validate([
+        'Fullname' => 'required|max:75|regex:/^[a-zA-Z]+$/u',
+        'Age' => ['required', 'numeric']
+    ]);
+
+    return redirect('/home');
+});
