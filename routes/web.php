@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,5 +81,16 @@ Route::get('/hash',function (){
 });
 
 Route::post('/hash', function (){
+        $data =request()->validate(['hash' => 'required']);
 
+        $Bcrypt = Hash::make($data['hash'], [
+            'rounds' => 12
+        ]);
+
+        $Argon2 = Hash::make($data['hash'], [
+            'memory' => 1024,
+            'time' => 2,
+            'threads' => 2,
+        ]);
+        return view('/hash',compact('Bcrypt','Argon2'));
 });

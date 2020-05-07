@@ -14,4 +14,21 @@
     </div>
     </form>
 
+    @isset($Bcrypt)
+    <div class="col-6 mx-auto">
+        <div class="form-group">
+            <h1>Data Hashed with Bcrypt</h1>
+       <p>{{$Bcrypt}}</p>
+        </div>
+        </div>
+    @endisset
+    @isset($Argon2)
+    <div class="col-6 mx-auto">
+        <div class="form-group">
+            <h1>Data Hashed with Argon2</h1>
+       <p>{{$Argon2}}</p>
+        </div>
+        </div>
+    @endisset
+
 @endsection
