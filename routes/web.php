@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,24 @@ Route::post('/form',function (){
     // Insert data after this
 
     return redirect('/home');
+});
+
+
+Route::get('/encrypt', function (){
+
+
+    return view('encrypt');
+
+});
+
+Route::post('/encrypt',function () {
+    if(request()->has('encrypt')){
+        $data = request()->validate(['encrypt' => 'required']);
+        $data = encrypt($data['encrypt']);
+    }
+    if(request()->has('decrypt')){
+        $data = request()->validate(['decrypt' => 'required']);
+        $data = decrypt($data['decrypt']);
+    }
+return view('encrypt',compact('data'));
 });
