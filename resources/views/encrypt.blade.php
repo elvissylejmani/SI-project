@@ -20,7 +20,7 @@
         @csrf
         <div class="col-6 mx-auto">
         <div class="form-group">
-          <label for="exampleInputEmail1">Encrypt data</label>
+          <label for="exampleInputEmail1">Decrypt data</label>
         <input type="text" value="{{ $data ?? ''}}" name="decrypt" class="form-control"
            id="exampleInputEmail1"  placeholder="Data to be encrypted">
     

@@ -73,3 +73,12 @@ Route::post('/encrypt',function () {
     }
 return view('encrypt',compact('data'));
 });
+
+
+Route::get('/hash',function (){
+    return view('hash');
+});
+
+Route::post('/hash', function (){
+
+});
